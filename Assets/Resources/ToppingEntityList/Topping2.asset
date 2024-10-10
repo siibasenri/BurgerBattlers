@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b19baeb33762e4db46f3cf1fb2a28c, type: 3}
+  m_Name: Topping2
+  m_EditorClassIdentifier: 
+  IDNumber: 2
+  nameText: "\u30C1\u30FC\u30BA"
+  iconSprite: {fileID: 21300000, guid: db14b19310b4c22499c448a58007f86a, type: 3}
+  explainText: "\u6FC3\u539A\u306A\u30C1\u30FC\u30BA\u3002<br><color=yellow>\u30CA\u30C1\u30E5\u30E9\u30EB\u7CFB</color>\u306E\u5177\u6750\u3002"
+  toppingKind: 1
