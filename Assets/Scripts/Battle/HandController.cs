@@ -51,13 +51,10 @@ namespace BurgerBattler.Battle
             if (cards.Count != 0)
             {
                 float cardsSpan = cards[0].transform.localScale.x * 50; //カード同士の間隔度合い
-                //float cardsSpan = GetComponent<RectTransform>().rect.width *0.1f;
-                //float cardsSpan = cards[0].GetComponent<RectTransform>().rect.width *0.2f;
 
                 for (int i = 0; i < cards.Count; i++)
                 {
                     Vector3 cardPos = new Vector3((cards.Count - 1) * -cardsSpan + 2 * cardsSpan * i, 0, 0);
-                    //cards[i].transform.position = transform.position + cardPos;
                     cards[i].GetComponent<RectTransform>().position = GetComponent<RectTransform>().position + cardPos;
                 }
             }
@@ -84,7 +81,6 @@ namespace BurgerBattler.Battle
             {
                 Vector3 cardPos = new Vector3(0, -1 * Mathf.Abs((cards.Count - 1) * -cardsSpan + 2 * cardsSpan * i), 0);
                 cards[i].transform.position += cardPos;
-                //cards[i].GetComponent<CardMove>().pos = cards[i].transform.position;
                 cards[i].GetComponent<CardMove>().pos = cards[i].GetComponent<RectTransform>().position;
             }
         }

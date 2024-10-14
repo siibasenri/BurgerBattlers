@@ -8,9 +8,12 @@ using BurgerBattler.Topping;
 
 namespace BurgerBattler.Motion
 {
+    //パネルの動きに関するクラス
     public class BurgerCreateMotionController : MonoBehaviour
     {
-        [SerializeField] GameObject burgerPanel, menuPanel,cancelButton,CreateButton;
+        //作成したバーガーを表示しているパネル、トッピング一覧のパネル
+        //決定画面から作成画面に戻るボタン、作成画面から決定画面に移行するボタン
+        [SerializeField] GameObject burgerPanel, menuPanel,cancelButton,createButton;
 
         float burgerPos;
         float[] burgersPos;
@@ -19,15 +22,17 @@ namespace BurgerBattler.Motion
 
         private void Start()
         {
-            burgerPos = burgerPanel.transform.position.x;
+            
+            burgerPos = burgerPanel.transform.position.x; 
             burgerPanel.transform.position = new Vector2(transform.position.x, burgerPanel.transform.position.y);
 
-            burgers = burgerPanel.GetComponentsInChildren<Transform>();
+            burgers = burgerPanel.GetComponentsInChildren<Transform>(); //バンズとトッピングを取得
             burgersPos = new float[burgers.Length];
 
+            //バンズとトッピングの数だけ繰り返す
             for (int i = 0; i < burgers.Length; i++)
             {
-                burgersPos[i] = burgers[i].localPosition.y;
+                burgersPos[i] = burgers[i].localPosition.y; //初期位置を記録
 
                 if (burgers[i].name == "MidFood")
                 {
@@ -45,6 +50,7 @@ namespace BurgerBattler.Motion
 
             for (int i = 0; i < burgers.Length; i++)
             {
+                //Toggle無効化
                 if (burgers[i].GetComponent<Toggle>() != null)
                 {
                     burgers[i].GetComponent<Toggle>().enabled = false;
@@ -64,11 +70,12 @@ namespace BurgerBattler.Motion
             menuPanel.SetActive(true);
             burgerPanel.transform.DOMoveX(burgerPos, 1f);
             cancelButton.SetActive(false);
-            CreateButton.SetActive(false);
+            createButton.SetActive(false);
             
 
             for (int i = 0; i < burgers.Length; i++)
             {
+                //Toggle有効化
                 if (burgers[i].GetComponent<Toggle>() != null)
                 {
                     burgers[i].GetComponent<Toggle>().enabled = true;
@@ -82,15 +89,17 @@ namespace BurgerBattler.Motion
             }
         }
 
+        //重なってない状態のハンバーガーのみを表示するモード(トッピングのToggle有効)
         public void InitMode()
         {
-            menuPanel.SetActive(false);
-            burgerPanel.transform.DOMoveX(transform.position.x, 1f);
-            cancelButton.SetActive(false);
-            CreateButton.SetActive(false);
+            menuPanel.SetActive(false); //トッピング一覧を非表示
+            burgerPanel.transform.DOMoveX(transform.position.x, 1f); //作成しているバーガーを重ねる
+            cancelButton.SetActive(false);  //キャンセルボタンを非表示
+            createButton.SetActive(false);  //作成ボタンを非表示
 
             for (int i = 0; i < burgers.Length; i++)
             {
+                //Toggle有効化
                 if (burgers[i].GetComponent<Toggle>() != null)
                 {
                     burgers[i].GetComponent<Toggle>().enabled = true;

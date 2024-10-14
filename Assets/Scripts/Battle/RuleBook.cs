@@ -23,9 +23,8 @@ namespace BurgerBattler.Battle
 
         GameObject oppHand,playerHand, enemyHand;        //プレイヤーと自分の手札がある所
         ToppingModel[] oppToppings, myToppings, enemyToppings, playerToppings; //自分から見た、敵のtoppingリスト
-        EffectTextScript oppEffectTextScript,myEffectTextScript;               //
+        EffectTextScript oppEffectTextScript,myEffectTextScript;               
         GameObject oppSpeechFlame,mySpeechFlame;
-        //BattleLog 
 
         int maxSpellCount,currSpellCount;                //唱えられるカードの上限と、現在唱えたカード数
         float speechTime;                               //カード使用やコールの演出にかける時間
@@ -320,30 +319,6 @@ namespace BurgerBattler.Battle
                     }
 
                     break;
-                    /*
-                case CardKind.CoinFront:
-                    
-                    mySpeechFlame.SetActive(true);
-                    resultText = "表…ふふっ、今日はツイてるな";
-                    StartCoroutine(myEffectTextScript.ShowText(resultText, speechTime));
-                    yield return new WaitForSeconds(speechTime);
-
-
-                    //爆アド
-
-                    break;
-
-                case CardKind.CoinBack:
-                    
-                    mySpeechFlame.SetActive(true);
-                    resultText = "裏…ちっ、はずれか…";
-                    StartCoroutine(myEffectTextScript.ShowText(resultText, speechTime));
-                    yield return new WaitForSeconds(speechTime);
-
-                    //爆損(カードを捨てる？何もせずスキップ?)
-                    
-                    break;
-                    */
 
                 //自分のToppingをランダムに入れ替える
                 case CardKind.Love:
@@ -506,6 +481,7 @@ namespace BurgerBattler.Battle
             }
         }
 
+        //敵と自分のトッピングと手札を設定
         public void SetInfo(ToppingModel[] toppings,GameObject hand, bool isEnemy)
         {
             if(isEnemy)
@@ -520,6 +496,7 @@ namespace BurgerBattler.Battle
             }
         }
 
+        //ログにカード情報とカウントとトッピングを入力
         void WriteLog(CardKind kind,int count,string topping )
         {
             if(!isPlayerTurn)

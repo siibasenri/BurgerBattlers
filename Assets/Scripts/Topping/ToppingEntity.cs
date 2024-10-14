@@ -6,6 +6,7 @@ namespace BurgerBattler.Topping
 {
     [CreateAssetMenu(fileName = "ToppingEntity", menuName = "Create ToppingEntity")]
 
+    //トッピングの情報を登録するためのクラス(WebGLでは不可)
     public class ToppingEntity :ScriptableObject
     {
         public int IDNumber;

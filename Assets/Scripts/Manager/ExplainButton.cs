@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace BurgerBattler.Manager
 {
+    //解説テキストを表示するクラス
     public class ExplainButton : MonoBehaviour
     {
         [SerializeField] TalkManager talkManager;
-        //[SerializeField] string text;
 
+        //キャラ選択を解説するテキスト
         public void CharaExplain()
         {
             talkManager.gameObject.SetActive(true);
@@ -16,6 +17,7 @@ namespace BurgerBattler.Manager
                  "\nそれぞれのキャラクターが能力を持っており、バトルを有利にします。"));
         }
 
+        //バーガー作成を解説するテキスト
         public void CreateExplain()
         {
             talkManager.gameObject.SetActive(true);
@@ -24,6 +26,8 @@ namespace BurgerBattler.Manager
                 "好みのトッピングを選択してください。\n" +
                 "上段・中断・下段それぞれにトッピングを選び、ハンバーガーを完成させてください。"));
         }
+
+        //戦闘を解説するテキスト
         public void BattleExplain()
         {
             talkManager.gameObject.SetActive(true);

@@ -7,16 +7,17 @@ using BurgerBattler.Card;
 
 namespace BurgerBattler.Battle
 {
+    //使用したカードとそれで得た情報を扱うスクリプト
     public class BattleLog : MonoBehaviour
     {
-        List<string> pow, nat, hea, removes;
-        int powCount, natCount, heaCount, doubleShot, unknowns;
-        bool isPow, isNat, isHea;
-        string snipe;
+        List<string> pow, nat, hea, removes;          //種類別トッピングのリストと、除外リスト
+        int powCount, natCount, heaCount, doubleShot; //種類別トッピングの数と、被ってる食材数, unknowns;
+        bool isPow, isNat, isHea;                     //各種○○主義を使用したか否か
+        string snipe;                                 //スナイパーで判明したトッピングの名前
         
         private void Start()
         {
-            unknowns = 3;
+            //unknowns = 3;
             doubleShot = -1;
             snipe = "";
 
@@ -32,15 +33,11 @@ namespace BurgerBattler.Battle
             pow = new List<string>() { "パティ", "ベーコン" };
             nat = new List<string>() { "玉子", "チーズ" };
             hea = new List<string>() { "トマト", "キャベツ" };
-            /*
-            toppings = new List<string>();
-            toppings.AddRange(pow);
-            toppings.AddRange(nat);
-            toppings.AddRange(hea);
-            */
 
         }
 
+        //使用したカードを記録
+        //カードの種類、カウント(○○主義の場合に使用)、トッピング名
         public void WriteLog(CardKind kind, int count, string topping)
         {
             switch (kind)
@@ -65,7 +62,6 @@ namespace BurgerBattler.Battle
 
                         if (heaCount == 0)
                         {
-                            //toppings.RemoveAll(item => hea.Contains(item));
                             removes.AddRange(hea);
                         }
                         isHea = true;
@@ -79,7 +75,6 @@ namespace BurgerBattler.Battle
 
                         if (natCount == 0)
                         {
-                            //toppings.RemoveAll(item => nat.Contains(item));
                             removes.AddRange(nat);
                         }
                         isNat = true;
@@ -100,15 +95,15 @@ namespace BurgerBattler.Battle
 
                 case CardKind.isNotIn:
 
-                    //toppings.Remove(topping);
                     removes.Add(topping);
 
                     break;
 
             }
-            //Debug.Log("removeNum:" + removes.Count + "powCount" + powCount);
 
         }
+
+        //ログを読み取る
         public (List<string>,int,int,int,int,string) ReadLog()
         {
             return (removes, powCount, natCount, heaCount, doubleShot, snipe);

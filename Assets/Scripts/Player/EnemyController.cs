@@ -24,13 +24,6 @@ namespace BurgerBattler.Player
 
         GameObject hand;
 
-        /*
-        List<string> pow;
-        List<string> nat;
-        List<string> hel;
-        List<string> Toppings;
-        */
-
         private void Start()
         {
             hand = enemyInfo.hand;
@@ -74,11 +67,9 @@ namespace BurgerBattler.Player
             if (coin == 0 && hand.transform.childCount != 0)
             {
                 StartCoroutine(PlayRandomCard());
-                //StartCoroutine(PlayDeepCard());
             }
             else
             {
-                //RandomCall();
                 NormalCall(log.ReadLog());
             }
         }
@@ -100,49 +91,10 @@ namespace BurgerBattler.Player
             Destroy(randomCard);
 
         }
-        IEnumerator PlayDeepCard()
-        {
-            int cardID = 0;
-            CardController[] cards = hand.GetComponentsInChildren<CardController>();
-            for (int i = 0; i < cards.Length; i++)
-            {
-                if (cards[i].model.kind == CardKind.isPow)
-                {
-                    cardID = i;
-                }
-            }
-            GameObject choiceCard = cards[cardID].gameObject;
-
-            choiceCard.GetComponent<CardController>().view.Reverse();
-            choiceCard.transform.DOMove(spellPanel.transform.position, 1).SetEase(Ease.OutQuart);
-            choiceCard.transform.rotation = Quaternion.Euler(Vector2.zero);
-            choiceCard.transform.DOScale(Vector2.one * 1.2f, 1).SetEase(Ease.InOutQuart);
-
-            yield return StartCoroutine(ruleBook.UseCard(CardKind.isHea));
-            yield return new WaitForSeconds(1f);
-            Destroy(choiceCard);
-        }
-
-        //ランダムなトッピングを選んでコールする
-        void RandomCall()
-        {
-
-            ToppingModel[] call = new ToppingModel[3];
-
-            int TopID = UnityEngine.Random.Range(0, toppingBank.toppingDetails.Length);
-            int MidID = UnityEngine.Random.Range(0, toppingBank.toppingDetails.Length);
-            int BotID = UnityEngine.Random.Range(0, toppingBank.toppingDetails.Length);
-
-            call[0] = new ToppingModel(TopID);
-            call[1] = new ToppingModel(MidID);
-            call[2] = new ToppingModel(BotID);
 
 
-
-            StartCoroutine(ruleBook.Call(call));
-        }
-
-        //○○主義とアレルギーの情報だけで推理(主義もアレルギーもない場合もある)
+        //○○主義とアレルギーの情報だけで推理してコール
+        //(主義もアレルギーもない場合もある)
         void NormalCall((List<string> removes, int powCount, int natCount, int heaCount, int doubleshot, string snipe) p)
         {
             ToppingModel[] call = new ToppingModel[3];
@@ -166,12 +118,6 @@ namespace BurgerBattler.Player
             powList.RemoveAll(item => p.removes.Contains(item));
             natList.RemoveAll(item => p.removes.Contains(item));
             heaList.RemoveAll(item => p.removes.Contains(item));
-
-            /*
-            Debug.Log("plist:" + powList.Count);
-            Debug.Log("nlist:" + natList.Count);
-            Debug.Log("hlist:" + heaList.Count);
-            */
 
             //初期化のためのトッピング一覧リスト
             List<string> initList = new List<string>();
@@ -253,31 +199,8 @@ namespace BurgerBattler.Player
                 tmpList.Remove(tmp);
             }
 
-            StartCoroutine(ruleBook.Call(call));
+            StartCoroutine(ruleBook.Call(call));//作成したバーガーでコールをする
         }
 
-
-
-        void DeepCall((List<string> removes, int powCount, int natCount, int heaCount, int doubleshot, string snipe) p)
-        {
-            int unknowns = 3;
-            ToppingModel snipeTopping;
-            ToppingModel[] call = new ToppingModel[3];
-            List<string> allToppings = new List<string>()
-                {
-                    "トマト",
-                    "キャベツ",
-                    "チーズ",
-                    "玉子",
-                    "ベーコン",
-                    "パティ"
-                };
-
-            List<string> powList = new List<string>() { "パティ", "ベーコン" };
-            List<string> natList = new List<string>() { "玉子", "チーズ" };
-            List<string> heaList = new List<string>() { "トマト", "キャベツ" };
-
-
-        }
     }
 }

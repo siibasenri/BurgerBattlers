@@ -10,25 +10,27 @@ using DG.Tweening;
 
 namespace BurgerBattler.Battle
 {
+    //カードを出すための場のクラス
     public class SpellPanelController : MonoBehaviour, IDropHandler
     {
-        [SerializeField] RuleBook ruleBook;
-        [SerializeField] GameFlowManager gameFlow;
+        [SerializeField] RuleBook ruleBook;        //ゲームのルールを管理しているクラス
+        [SerializeField] GameFlowManager gameFlow; //ゲームの流れを管理しているクラス
 
         //カードが置かれたら、カードの効果を発動する
         public void OnDrop(PointerEventData eventData)
         {
             CardController dropCard = eventData.pointerDrag.GetComponent<CardController>();
 
+            //カードが置かれてて、プレイヤーのターンだった場合
             if (dropCard != null && gameFlow.GetState == GameState.PlayerTurn)
             {
-                dropCard.GetComponent<CardMove>().enabled = false;
-                dropCard.transform.DOMove(transform.position,0.3f);
-                dropCard.transform.SetParent(this.transform);
+                dropCard.GetComponent<CardMove>().enabled = false; //カードの動きを無効化
+                dropCard.transform.DOMove(transform.position,0.3f); //カードを見やすい位置に移動
+                dropCard.transform.SetParent(this.transform);      //カードの親をSpellPanelに変更
 
-                StartCoroutine(ruleBook.UseCard(dropCard.model.kind));
+                StartCoroutine(ruleBook.UseCard(dropCard.model.kind)); //効果を発動
 
-                StartCoroutine(DestroyCard(dropCard.gameObject));
+                StartCoroutine(DestroyCard(dropCard.gameObject));      //カードを破壊
             }
         }
 

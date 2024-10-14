@@ -5,13 +5,14 @@ using BurgerBattler.Motion;
 
 namespace BurgerBattler.Battle
 {
+    //コール用のパネルを閉じるボタンのクラス
     public class BackButtonController : MonoBehaviour
     {
         [SerializeField] FrontPanelController frontPanel;
-        [SerializeField] BurgerCreateMotionController motion;
+
     public void OnClick()
         {
-            frontPanel.UpPanel();
+            frontPanel.UpPanel(); //パネルを画面外の上にあげる
         }
     }
 }

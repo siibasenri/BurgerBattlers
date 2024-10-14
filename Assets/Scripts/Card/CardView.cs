@@ -7,6 +7,7 @@ using TMPro;
 
 namespace BurgerBattler.Card
 {
+    //カードの見た目に関するクラス
     public class CardView : MonoBehaviour
     {
         [SerializeField] TextMeshProUGUI nameText,explainText;

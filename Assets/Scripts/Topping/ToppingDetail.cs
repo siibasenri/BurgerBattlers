@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Topping
 {
+    //トッピングの情報を登録するためのクラス(WebGL用)
     public class ToppingDetail : MonoBehaviour
     {
         public int IDNumber;

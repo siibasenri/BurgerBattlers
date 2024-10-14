@@ -6,6 +6,7 @@ using TMPro;
 
 namespace BurgerBattler.Motion
 {
+    //対戦開始時にスウィングドアを開けるクラス
     public class SwingDoorScript : MonoBehaviour
     {
         AudioSource audioSource;
@@ -23,8 +24,7 @@ namespace BurgerBattler.Motion
         public void OpenDoor()
         {
             enabled = true;
-            //audioSource = GetComponent<AudioSource>();
-            //audioSource.clip = openSE;
+
             telop.SetText("FIGHT!");
 
             //ドアを開けて、横に移動させる

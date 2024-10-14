@@ -5,6 +5,7 @@ using BurgerBattler.Motion;
 
 namespace BurgerBattler.Card
 {
+    //カードのデータ・表示を管理するクラス
     public class CardController : MonoBehaviour
     {
         public CardView view; // データを表示する

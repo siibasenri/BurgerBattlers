@@ -14,6 +14,7 @@ using DG.Tweening;
 
 namespace BurgerBattler.Manager
 {
+    //ゲームマネージャー
     public class GameManager : MonoBehaviour
     {
         private static GameManager instance;
@@ -139,7 +140,6 @@ namespace BurgerBattler.Manager
             ruleBook.BattleInit();  //バトルの初期化
             turnText.gameObject.SetActive(true);
             yield return StartCoroutine(turnText.ShowText("Your Turn", 2f));
-            //ruleBook.BattleInit();  //バトルの初期化
         }
         public void PlayerCheckStageInit()
         {
@@ -150,7 +150,6 @@ namespace BurgerBattler.Manager
             ruleBook.BattleInit();  //バトルの初期化
             turnText.gameObject.SetActive(true);
             yield return StartCoroutine(turnText.ShowText("Enemy Turn",2f));
-            //ruleBook.BattleInit();  //バトルの初期化
             yield return StartCoroutine(enemy.RandomAction());
         }
 
@@ -166,10 +165,5 @@ namespace BurgerBattler.Manager
 
         }
 
-        IEnumerator LittleWait()
-        {
-            yield return new WaitForSeconds(1);
-            gameFlow.NextStage();
-        }
     }
 }

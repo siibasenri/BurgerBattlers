@@ -1,5 +1,6 @@
 namespace BurgerBattler.Card
 {
+    //ƒJ[ƒh‚Ìí—Şˆê——
     public enum CardKind
     {
         isPow,

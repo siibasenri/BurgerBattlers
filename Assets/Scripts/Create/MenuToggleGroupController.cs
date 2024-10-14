@@ -7,7 +7,7 @@ using BurgerBattler.Topping;
 
 namespace BurgerBattler.Create
 {
-    //メニュー表のトッピングのコントローラー
+    //メニュー表のトッピングのコントローラークラス
     public class MenuToggleGroupController : MonoBehaviour
     {
         List<Toggle> togglesList = new List<Toggle>();

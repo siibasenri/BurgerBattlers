@@ -6,7 +6,8 @@ using DG.Tweening;
 
 
 namespace BurgerBattler.Chara
-{
+{　
+    //キャラクター選択用のToggleのクラス
     public class CharaToggleGroupContorller : MonoBehaviour
     {
         List<Toggle> togglesList = new List<Toggle>();
@@ -37,21 +38,24 @@ namespace BurgerBattler.Chara
 
         public void Change(bool state)
         {
+            //選ばれたToggleのみが呼び出される
             if (state)
             {
                 foreach (var toggle in togglesList)
                 {
+                    //選ばれたToggleだったら
                     if (toggle.isOn)
                     {
-                        model = toggle.GetComponent<CharaController>().model;
-                        toggle.transform.DOScale(Vector2.one * 1.1f, 0.1f).SetEase(Ease.OutBounce);
+                        model = toggle.GetComponent<CharaController>().model; //modelに代入
+                        toggle.transform.DOScale(Vector2.one * 1.1f, 0.1f).SetEase(Ease.OutBounce); //大きく表示
                     }
+                    //それ以外だったら
                     else
                     {
                         toggle.transform.DOScale(Vector2.one, 0.1f).SetEase(Ease.OutBounce);
                     }
                 }
-                selectButton.SetActive(true);
+                selectButton.SetActive(true); //決定ボタンを表示
             }
         }
     }

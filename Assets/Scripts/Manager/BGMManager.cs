@@ -5,6 +5,7 @@ using DG.Tweening;
 
 namespace BurgerBattler.Manager
 {
+    //BGMを管理するクラス
     public class BGMManager : MonoBehaviour
     {
         [SerializeField] AudioClip lobbyBGM;
@@ -15,6 +16,7 @@ namespace BurgerBattler.Manager
         {
             audioSource = GetComponent<AudioSource>();
         }
+        //バーガー作成やキャラ選択時のBGM
         public void PlayLobbyBGM()
         {
             audioSource.clip = lobbyBGM;
@@ -22,6 +24,7 @@ namespace BurgerBattler.Manager
             audioSource.Play();
         }
 
+        //対戦時のBGM
         public void PlayBattleBGM()
         {
             audioSource.clip = battleBGM;
@@ -29,6 +32,7 @@ namespace BurgerBattler.Manager
             audioSource.Play();
         }
 
+        //ゆっくり音を消す
         public void FadeOut()
         {
             int vol = 0;

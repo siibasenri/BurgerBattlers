@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Topping
 {
+    //トッピングの情報から対応するデータを代入するクラス
     public class ToppingModel 
     {
         public string ID;
@@ -15,7 +16,11 @@ namespace BurgerBattler.Topping
 
         public ToppingModel(int toppingID)
         {
-            //ToppingEntity toppingEntity = Resources.Load<ToppingEntity>("ToppingEntityList/Topping" + toppingID); // CardEntityのパス
+            /* ToppingEntityから情報を参照する方法(WebGLでは不可)
+            ToppingEntity toppingEntity = Resources.Load<ToppingEntity>("ToppingEntityList/Topping" + toppingID); // CardEntityのパス
+            */
+
+            //Bankに登録されている情報を参照する方法(WebGL用)
             GameObject bank = GameObject.Find("Bank");
             ToppingDetail toppingDetail = bank.GetComponent<ToppingBank>().toppingDetails[toppingID];
 

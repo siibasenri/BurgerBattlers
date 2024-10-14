@@ -6,6 +6,7 @@ using TMPro;
 
 namespace BurgerBattler.Manager
 {
+    //説明や解説の文の表示を管理するクラス
     public class TalkManager : MonoBehaviour
     {
         TextMeshProUGUI text; 
@@ -18,6 +19,7 @@ namespace BurgerBattler.Manager
 
         public bool isClose;
 
+        //文字を一文字ずつ表示する関数
         public IEnumerator TalkText(string content)
         {
             InitSetting();
@@ -36,6 +38,8 @@ namespace BurgerBattler.Manager
             isTalkFinished = true;
         }
 
+        //クリックしたら全文一気に表示
+        //もう一度クリックしたら非表示にする
         public void SkipTalk()
         {
             if (!isTalkFinished)
@@ -51,6 +55,8 @@ namespace BurgerBattler.Manager
             }
 
         }
+
+        //初期化
         void InitSetting()
         {
             text = GetComponentInChildren<TextMeshProUGUI>();

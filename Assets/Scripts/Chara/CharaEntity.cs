@@ -7,6 +7,7 @@ namespace BurgerBattler.Chara
 {
     [CreateAssetMenu(fileName = "CharaEntity", menuName = "Create CharaEntity")]
 
+    //キャラクターのデータを登録するためのクラス(WebGLでは使用不可)
     public class CharaEntity : ScriptableObject
     {
         //public int charaID;

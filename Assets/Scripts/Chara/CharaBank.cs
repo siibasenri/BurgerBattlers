@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Chara
 {
+    //全キャラクターの情報を一つにまとめるクラス
     public class CharaBank : MonoBehaviour
     {
         public CharaDetail[] charaDetails;

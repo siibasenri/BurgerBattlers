@@ -2,10 +2,12 @@ using UnityEngine;
 
 namespace BurgerBattler.Manager
 {
+    //各パネルの表示を切り替えるクラス
     public class PanelManager : MonoBehaviour
     {
         public GameObject charaPanel, burgerPanel, battelePanel,ResultPanel;
 
+        //キャラ選択パネルを表示
         public void ActiveCharaPanel()
         {
             charaPanel.SetActive(true);
@@ -14,6 +16,7 @@ namespace BurgerBattler.Manager
             ResultPanel.SetActive(false);
         }
 
+        //バーガー作成パネルを表示
         public void ActiveBurgerPanel()
         {
             charaPanel.SetActive(false);
@@ -23,6 +26,7 @@ namespace BurgerBattler.Manager
 
         }
 
+        //バトルパネルを表示
         public void ActiveBattlePanel()
         {
             charaPanel.SetActive(false);
@@ -31,6 +35,7 @@ namespace BurgerBattler.Manager
             ResultPanel.SetActive(false);
         }
 
+        //リザルトパネルを表示
         public void ActiveResultPanel()
         {
 

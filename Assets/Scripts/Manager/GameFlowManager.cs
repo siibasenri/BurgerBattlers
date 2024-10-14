@@ -10,12 +10,12 @@ using UnityEngine.UI;
 
 namespace BurgerBattler.Manager
 {
+    //ゲームの進行を管理するクラス
     public class GameFlowManager : MonoBehaviour
     {
         GameState gameState;
         GameManager instance;
 
-        //[SerializeField] Text text;
         public bool isWin;
 
         public GameState GetState
@@ -33,7 +33,6 @@ namespace BurgerBattler.Manager
 
         public void NextStage()
         {
-            
             gameState = NextStateFlow();
 
             switch(gameState)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Chara
 {
+    //キャラクターのデータを管理するクラス
     public class CharaModel 
     {
         public int ID;
@@ -16,6 +17,7 @@ namespace BurgerBattler.Chara
         public CharaModel(int cardID) // データを受け取り、その処理
         {
             /*
+             *charaEntityから情報を参照する方式(WebGLでは不可能)
             CharaEntity charaEntity = Resources.Load<CharaEntity>("CharaEntityList/Chara" + cardID); // CardEntityのパス
             
             kind = charaEntity.charaKind;
@@ -23,6 +25,8 @@ namespace BurgerBattler.Chara
             icon = charaEntity.charaIcon;
             explain = charaEntity.charaExplain;
             */
+
+            //bankから情報を参照する方式(WebGL用)
             GameObject bank = GameObject.Find("Bank");//charaDetailを入れてるところ(疑似的なResources)
             CharaDetail charaDetail = bank.GetComponent<CharaBank>().charaDetails[cardID];//CharaBankの配列にdetailを入れてる
             

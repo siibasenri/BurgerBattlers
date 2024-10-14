@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Topping
 {
+    //全トッピングの情報をまとめておくクラス
     public class ToppingBank : MonoBehaviour
     {
         public ToppingDetail[] toppingDetails;

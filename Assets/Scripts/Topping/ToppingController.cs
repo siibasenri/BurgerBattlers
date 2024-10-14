@@ -7,12 +7,12 @@ using BurgerBattler.Create;
 
 namespace BurgerBattler.Topping
 {
+    //トッピングのデータ・見た目を管理するクラス
     public class ToppingController : MonoBehaviour
     {
         public ToppingView view; // データを表示する
         public ToppingModel model; 
 
-        //[SerializeField] PlayerInfo player;
         BurgerTogglesGroupController toggelGroup;
 
         private void Awake()

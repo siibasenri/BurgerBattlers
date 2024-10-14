@@ -8,6 +8,7 @@ using BurgerBattler.Create;
 
 namespace BurgerBattler.Battle
 {
+    //作成したバーガーをコールするボタンのクラス
     public class CallButtonScript : CreateButtonBase
     {
         [SerializeField] RuleBook ruleBook;
@@ -23,6 +24,7 @@ namespace BurgerBattler.Battle
             StartCoroutine(ruleBook.Call(call));
         }
 
+        
         public override void BurgerCreate(ToppingModel[] Toppings)
         {
             call = Toppings;

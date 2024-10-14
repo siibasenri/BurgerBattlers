@@ -10,16 +10,17 @@ using BurgerBattler.Motion;
 
 namespace BurgerBattler.Create
 {
+    //作成しているバーガーのToggleのクラス
     public class BurgerTogglesGroupController : MonoBehaviour
     {
-        [SerializeField] BurgerDecideButton decideButton;
-        [SerializeField] BurgerCreateMotionController motion;
-        [SerializeField] CreateButtonBase createButton;
-        ToppingModel[] Toppings;
+        [SerializeField] BurgerDecideButton decideButton; //仮決定ボタン
+        [SerializeField] BurgerCreateMotionController motion; //バーガーの動きを管理するクラス
+        [SerializeField] CreateButtonBase createButton;  //決定ボタン
+        ToppingModel[] Toppings; //トッピングの配列
 
 
-        Toggle activeToggle;
-        List<Toggle> togglesList;
+        Toggle activeToggle; //Toggleの中で、選択されたもの
+        List<Toggle> togglesList; //Toggle一覧
 
         private void Start()
         {
@@ -90,10 +91,11 @@ namespace BurgerBattler.Create
 
             bool isNull = Toppings.Contains(null);
 
+            //ハンバーガーがすべてトッピング選択済みだったら
             if (!isNull)
             {
-                decideButton.gameObject.SetActive(true);
-                createButton.BurgerCreate(Toppings);
+                decideButton.gameObject.SetActive(true); //仮決定ボタンを表示
+                createButton.BurgerCreate(Toppings); //BurgerCreateに選択トッピング一覧を渡す
             }
         }
     }

@@ -5,21 +5,20 @@ using TMPro;
 
 namespace BurgerBattler.Battle
 {
+    //吹き出しのセリフを書き換えるクラス
     public class EffectTextScript : MonoBehaviour
     {
         TextMeshProUGUI text;
-        /*
-        private void Awake()
-        {
-            text = GetComponentInChildren<TextMeshProUGUI>();
-        }
-        */
+
         public IEnumerator ShowText(string message,float time)
         {
             text = GetComponentInChildren<TextMeshProUGUI>();
 
+            //セリフを表示
             text.SetText(message);
             yield return new WaitForSeconds(time);
+
+            //指定秒数後、セリフを無くし枠を非表示
             text.SetText("");
             gameObject.SetActive(false);
         }

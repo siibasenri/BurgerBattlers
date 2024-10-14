@@ -423,7 +423,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae73042792bbe084bbeae46e8534dd66, type: 2}
-  m_sharedMaterial: {fileID: 8159839578838531953, guid: 1fc670dc4bdd9a74e842e2a3fa7f5b9b, type: 2}
+  m_sharedMaterial: {fileID: 3231947667597304418, guid: ae73042792bbe084bbeae46e8534dd66, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &28901999
@@ -4010,7 +4010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &395190368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11044,7 +11044,7 @@ MonoBehaviour:
   burgerPanel: {fileID: 1090675189}
   menuPanel: {fileID: 1604914596}
   cancelButton: {fileID: 415903164}
-  CreateButton: {fileID: 1796965755}
+  createButton: {fileID: 1796965755}
 --- !u!114 &1195503929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13062,7 +13062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frontPanel: {fileID: 1853695963}
-  motion: {fileID: 1853695961}
 --- !u!1 &1604914596
 GameObject:
   m_ObjectHideFlags: 0
@@ -13693,7 +13692,7 @@ MonoBehaviour:
   m_text: "\u6C7A\u5B9A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae73042792bbe084bbeae46e8534dd66, type: 2}
-  m_sharedMaterial: {fileID: 8159839578838531953, guid: 1fc670dc4bdd9a74e842e2a3fa7f5b9b, type: 2}
+  m_sharedMaterial: {fileID: 3231947667597304418, guid: ae73042792bbe084bbeae46e8534dd66, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13756,7 +13755,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1785923067
@@ -15005,7 +15004,7 @@ MonoBehaviour:
   burgerPanel: {fileID: 1650298691}
   menuPanel: {fileID: 2110366094}
   cancelButton: {fileID: 281354951}
-  CreateButton: {fileID: 295635667}
+  createButton: {fileID: 295635667}
 --- !u!225 &1853695962
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Card
 {
+    //カードの持つ情報に関するクラス(WebGL用)
     public class CardDetail : MonoBehaviour
     {
         public string nameText, explainText;

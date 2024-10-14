@@ -5,10 +5,11 @@ using BurgerBattler.Player;
 
 namespace BurgerBattler.Card
 {
+    //自分のデッキに何が入っているかを管理するクラス
     public class DeckList : MonoBehaviour
     {
-        public List<int> cards;
-        public int deckSize;
+        public List<int> cards; //カードのリスト
+        public int deckSize;  //デッキ枚数
 
         private void Start()
         {

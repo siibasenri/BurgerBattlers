@@ -6,7 +6,7 @@ using BurgerBattler.Player;
 
 namespace BurgerBattler.Card
 {
-    //カード生成用スクリプト
+    //カード生成用クラス
     public class CardSpawn : MonoBehaviour
     {
         [SerializeField] GameObject cardPrefab,hand;

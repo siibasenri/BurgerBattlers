@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Chara
 {
+    //キャラクターのデータを登録するためのクラス(WebGL用)
     public class CharaDetail : MonoBehaviour
     {
         public CharaKind charaKind;

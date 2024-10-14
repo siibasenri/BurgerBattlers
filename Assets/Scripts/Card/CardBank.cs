@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace BurgerBattler.Card
 {
+    //全カードの情報を一つにまとめるクラス
     public class CardBank : MonoBehaviour
     {
         public CardDetail[] cardDetails;
+
         private void Start()
         {
             cardDetails = GetComponentsInChildren<CardDetail>();

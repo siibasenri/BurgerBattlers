@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BurgerBattler.Card
 {
+    //カードの情報を登録するためのクラス(WebGLでは使用不可能)
     [CreateAssetMenu(fileName = "CardEntity", menuName = "Create CardEntity")]
 
     public class CardEntity : ScriptableObject
