@@ -3,7 +3,10 @@
 概要：ハンバーガーを作成し、特殊なカードを使って対戦相手のハンバーガーのトッピングを当てるカードゲームです。
 
 # プレイ動画
-https://github.com/user-attachments/assets/1a973867-e03c-472d-9781-fda044104115
+
+
+https://github.com/user-attachments/assets/c03fa4ab-ac8c-439e-8ba0-deade53a139d
+
 
 
 # 操作方法
